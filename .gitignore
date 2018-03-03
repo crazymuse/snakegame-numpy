@@ -1,0 +1,8 @@
+.ipynb_checkpoints
+*.egg-info
+*.swp
+*.py~
+*.pyc
+.idea
+/logs
+*~
