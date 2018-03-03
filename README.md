@@ -1,4 +1,4 @@
-# How to adding the environment in Gym
+# How to locally register SnakeNp as custom Gym environment
 
 To add the environment, do  
 
