@@ -1,8 +1,10 @@
 # How to adding the environment in Gym
 
-To add the environment, do
-`cd gym-np-snake`
+To add the environment, do  
+
+`cd gym-np-snake`  
 `pip install -e .`
+  
 
 The gym environment is only supporting single agent setup. However the Snake Trainer and SnakeEnv as listed in parent directory is designed to work for MultiAgent Cooperative setup.
 
@@ -37,7 +39,7 @@ Info contains the state information such 4 element tuple with following values (
 Interpretation of direction for the game is  as follow : 
 
 | **direction** | **value** |
-|---------------------------|
+|---------------|-----------|
 | west          |    0      |
 | north         |    1      |
 | east          |    2      |
@@ -48,7 +50,7 @@ Interpretation of direction for the game is  as follow :
 The actions are Discrete(3) , which means, either a snake can go left, go straight or go right. This is as follow :
 
 | **action**    | **value** |
-|---------------------------|
+|---------------|-----------|
 | no change     |    0      |
 | turn left     |    1      |
-| turn right    |    2      |
+| turn right    |    2      |  
