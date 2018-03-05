@@ -205,8 +205,8 @@ class SnakeGame:
 
 
 class HyperParameters:
-    length = 10
-    width = 10
+    length = 100
+    width = 100
 
 class SnakeNpSingleEnv(gym.Env):
     """
