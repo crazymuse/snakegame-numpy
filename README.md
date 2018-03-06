@@ -63,3 +63,7 @@ The actions are Discrete(3) , which means, either a snake can go left, go straig
 | no change     |    0      |
 | turn left     |    1      |
 | turn right    |    2      |  
+
+To have an overview of approach. The details are going to be posted on youtube. Bellow is the link of introductory video for the same.
+
+[![](https://img.youtube.com/vi/KIdhZTv-uo8/0.jpg)](https://www.youtube.com/watch?v=KIdhZTv-uo8)
