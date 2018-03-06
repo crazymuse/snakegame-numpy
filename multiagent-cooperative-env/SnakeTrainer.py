@@ -90,7 +90,24 @@ class SingleSnakeGameHyperParameters:
     
     SAVE_SKIP = 1000 # Save after 1000 iterations
     DEFAULT_SAVE_PATH = "./model/model.ckpt"
+    
+    def update_params(self,n_envs,n_snakes,grid_length,grid_width):
+        if n_envs != None:
+            self.N_ENVS=n_envs
+        if n_snakes != None:
+            self.N_SNAKES=n_snakes
+        if grid_length != None:
+            self.GRID_LENGTH = grid_length
+            self.GRID_WIDTH = grid_length
+        if grid_width != None:
+            self.GRID_WIDTH = grid_width
+        self.N_BATCH = self.N_STEPS*self.N_ENVS*self.N_SNAKES
+        self.OBS_SHAPE = (None, self.GRID_LENGTH, self.GRID_WIDTH, 1)
+        self.BATCH_OBS_SHAPE = (self.N_BATCH,self.GRID_LENGTH,self.GRID_WIDTH,1)
+        self.STATE_SHAPE = (None,self.N_STATES)
+        self.BATCH_STATE_SHAPE = (self.N_BATCH,self.N_STATES)
 
+            
 class Model:
     def __init__(self,policy,p,has_state):
         """
@@ -191,8 +208,9 @@ class SnakeRunner(object):
     """
     This class will take the Model and interface it with Snake Env
     """
-    def __init__(self):
+    def __init__(self,n_envs=None,n_snakes=None,grid_length=None,grid_width=None):
         self.p = SingleSnakeGameHyperParameters() # Game Parameters;
+        self.p.update_params(n_envs=n_envs,n_snakes=n_snakes,grid_length=grid_length,grid_width=grid_width)
         p = self.p
         self.env = snakeEnv.MultiAgentSnakeGame(length = p.GRID_LENGTH, 
                                 width =  p.GRID_WIDTH,n_envs=self.p.N_ENVS,n_snakes=self.p.N_SNAKES)

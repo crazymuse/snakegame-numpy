@@ -1,6 +1,8 @@
 # Running snake game without Gym Environment
 To run snake game without gym environment, you can look into folder [multiagent-cooperative env](https://github.com/crazymuse/snakegame-numpy/blob/master/multiagent-cooperative-env/SnakeExample.ipynb). Open jupyter notebook from same and run the sample code.
 
+![](preview.png)
+
 ### Prerequisities
 * Install [OpenAI Gym](https://github.com/openai/gym) and [Baselines](https://github.com/openai/baselines)
 * Install IPython and numpy via pip or conda.
