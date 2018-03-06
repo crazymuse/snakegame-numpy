@@ -175,6 +175,7 @@ class SnakeGame:
         self.snakes=[]
         self.update_food()
         self.addSnakes()
+        return np.reshape(self.get_observation(),(1,self.length,self.width,1))
         
 
     def step(self,action_list,verbose=False):
@@ -234,7 +235,7 @@ class SnakeNpSingleEnv(gym.Env):
 
     
     def reset(self):
-        self.env.reset()
+        return self.env.reset()
 
     def render(self,mode='human',close=False,verbose=True):
         return self.env.display(verbose=verbose)
